@@ -2,8 +2,8 @@ __pycache__/
 *.pyc
 work/
 *.spec
-release/v0.85/*Patcher.exe
-release/v0.85/*.zip
+release/*/*Patcher.exe
+release/*/*.zip
 *.bin
 *.chd
 *.iso
