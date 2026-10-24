@@ -4,7 +4,7 @@
 
 ## 한글 글꼴
 
-**x12y12pxMaruMinyaHangul**, SIL Open Font License 1.1. [라이선스 전문](release/v0.856/patcher-assets/licenses/Font-OFL.txt).
+**x12y12pxMaruMinyaHangul**, SIL Open Font License 1.1. [라이선스 전문](release/v0.87/patcher-assets/licenses/Font-OFL.txt).
 
 ## MAME chdman 0.289
 
@@ -12,10 +12,10 @@
 
 - [정확한 버전 전체 소스](https://github.com/mamedev/mame/tree/mame0289)
 - [동일 버전 소스 다운로드](https://github.com/mamedev/mame/archive/refs/tags/mame0289.tar.gz)
-- [MAME COPYING](release/v0.856/patcher-assets/licenses/MAME-COPYING.txt), [GPL 2.0 전문](release/v0.856/patcher-assets/licenses/GPL-2.0.txt)
+- [MAME COPYING](release/v0.87/patcher-assets/licenses/MAME-COPYING.txt), [GPL 2.0 전문](release/v0.87/patcher-assets/licenses/GPL-2.0.txt)
 
 ## Windows 실행 환경
 
-Python 3.13과 Tcl/Tk를 PyInstaller 6.22.3으로 묶었습니다. [Python](release/v0.856/patcher-assets/licenses/Python-LICENSE.txt), [Tk](release/v0.856/patcher-assets/licenses/Tk-license.terms), [PyInstaller](release/v0.856/patcher-assets/licenses/PyInstaller-COPYING.txt)의 라이선스와 [소스 안내](release/v0.856/patcher-assets/licenses/SOURCES.txt)를 포함합니다.
+Python 3.13과 Tcl/Tk를 PyInstaller 6.22.3으로 묶었습니다. [Python](release/v0.87/patcher-assets/licenses/Python-LICENSE.txt), [Tk](release/v0.87/patcher-assets/licenses/Tk-license.terms), [PyInstaller](release/v0.87/patcher-assets/licenses/PyInstaller-COPYING.txt)의 라이선스와 [소스 안내](release/v0.87/patcher-assets/licenses/SOURCES.txt)를 포함합니다.
 
 게임 자료와 외부 구성요소에 새로운 라이선스를 부여하지 않습니다. 각 구성요소의 기존 조건이 적용됩니다.

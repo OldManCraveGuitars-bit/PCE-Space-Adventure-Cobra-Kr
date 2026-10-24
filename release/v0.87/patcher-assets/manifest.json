@@ -1,0 +1,19 @@
+{
+  "version": "0.87",
+  "source_size": 252291984,
+  "source_sha256": "d724ebe0a12c1055dd41e496d135ea62f8b09bb30f8cc6313c6bf4b6fadb5e1a",
+  "target_sha256": "4e6f39541c3b8c87d72ec3c4538a57d7e25732acc249d83bc30021b0690d40f1",
+  "assets": {
+    "patch.ckp": "1b2e71d058580132c2b5e5c673b7812297133539eece1ed0d0ec8da4d00be58f",
+    "output.cue": "ac53079a2affccdd548cbe188ea1cd42dd501ff57de4de1cc617b08d1debdc5d",
+    "title.png": "f47534d7c1bd62d931f89e0542ba6c77a979466925c6264272d92a57696048cc",
+    "chdman.exe": "8a74468e3b0879698835b57c3b58e88e5a51e4de73bee6ef755c28530b5b040f",
+    "licenses/Font-OFL.txt": "bdb2ed4a15b845efd0afc4141fab72163655891c68279c368db6a1095047bcba",
+    "licenses/GPL-2.0.txt": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6",
+    "licenses/MAME-COPYING.txt": "60e9b2e1e0832d74696a9a0317693bb6cbe317747caad589a338e2c7636933e4",
+    "licenses/PyInstaller-COPYING.txt": "0598064c7d2718e38d7914a7d08343b2fa008e3bea9ebba2aa7a6ffa5900dd64",
+    "licenses/Python-LICENSE.txt": "62bec384df47b0328307db41455ff6ea2559e5546b394ac69148561b21703120",
+    "licenses/SOURCES.txt": "0c8c6454332a3fb7e7a7618469a1b1fee8019dd3edacad143aee280b47529b1c",
+    "licenses/Tk-license.terms": "0d1e4405f6273f091732764ed89b57066be63ce64869be6c71ea337dc4f2f9b5"
+  }
+}

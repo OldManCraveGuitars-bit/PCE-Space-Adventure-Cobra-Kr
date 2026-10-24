@@ -1,26 +1,34 @@
 {
-  "version": "v0.856",
-  "output_bin_sha256": "8753d3dbc185aee14237e7deb850d5cdb2c79f6b0c4fa335edd2c9b0bb53c0e4",
-  "output_chd_sha256": "62451e9de5b231707861cd05057f086d70310e37d9cdfb7dcbb803bcd310dd66",
-  "patcher_exe_sha256": "4e6f551563e8ff08cdd9f128620b2e74c53cb7dd775c5d1f7551c558009f6b8f",
+  "version": "v0.87",
+  "output_bin_sha256": "4e6f39541c3b8c87d72ec3c4538a57d7e25732acc249d83bc30021b0690d40f1",
+  "output_chd_sha256": "8dcd406e05eca8b4898dbad551eb471f2f233eefa885f7dc40546d47769ef96f",
+  "patcher_exe_sha256": "1289894b79065b32f3cbc34fb5c01fef7a13d41629014992f2dabf786cae837c",
   "preservation": {
-    "output_sha256": "8753d3dbc185aee14237e7deb850d5cdb2c79f6b0c4fa335edd2c9b0bb53c0e4",
-    "previous_sha256": "d2485e5b4cf0e02d8425e65e62e252cab292a4cf91fb7da62ae30236c063c7aa",
-    "only_scheduler_and_band_selector_changed": true,
-    "ranges": [
-      {
-        "start": "0x90b00",
-        "end": "0x90c00"
-      },
-      {
-        "start": "0xbd600",
-        "end": "0xbd900"
-      }
-    ],
-    "text_fonts_audio_and_native_scene_scripts_unchanged": true
+    "output_sha256": "4e6f39541c3b8c87d72ec3c4538a57d7e25732acc249d83bc30021b0690d40f1",
+    "previous_sha256": "8753d3dbc185aee14237e7deb850d5cdb2c79f6b0c4fa335edd2c9b0bb53c0e4",
+    "removed_false_record": "T02-002405B9",
+    "retained_records_unchanged": true,
+    "retained_record_count": 2749,
+    "subtitle_ledger_unchanged": true,
+    "glyph_mapping_unchanged": true,
+    "native_menu_structure": {
+      "tables": 926,
+      "entries": 2442,
+      "control_bytes_identical_to_original": true
+    }
+  },
+  "market": {
+    "market_pointer_restored": true,
+    "investigate_submenu_opens": true,
+    "merchant_and_surroundings_responsive": true,
+    "talk_and_movement_menus_responsive": true,
+    "cards_available_after_load": true,
+    "bar_clerk_recognizes_cards": true,
+    "reconstructed_checkpoint": true,
+    "emulator_game_code_modified": false
   },
   "escape": {
-    "output_sha256": "8753d3dbc185aee14237e7deb850d5cdb2c79f6b0c4fa335edd2c9b0bb53c0e4",
+    "output_sha256": "4e6f39541c3b8c87d72ec3c4538a57d7e25732acc249d83bc30021b0690d40f1",
     "diagnostic_only": true,
     "scope": "Current cold boot; synthetic in-memory save enters garage, then native key/bike menu and escape commands. No game code injection; not a full-story playthrough.",
     "user_save_modified": false,
@@ -35,11 +43,11 @@
     "positions": [
       216
     ],
-    "screen": "evidence\\8753d3db-escape\\caption.png",
+    "screen": "evidence\\4e6f3954-escape\\caption.png",
     "complete": true
   },
   "casino": {
-    "output_sha256": "8753d3dbc185aee14237e7deb850d5cdb2c79f6b0c4fa335edd2c9b0bb53c0e4",
+    "output_sha256": "4e6f39541c3b8c87d72ec3c4538a57d7e25732acc249d83bc30021b0690d40f1",
     "diagnostic_only": true,
     "scope": "Current cold boot; isolated in-memory save enters casino, then native dialogue menu triggers AD74. No game code injection; not a full-story playthrough.",
     "user_save_modified": false,
@@ -50,22 +58,11 @@
     "stable_frames": 43,
     "concurrent_native_text_frames": 43,
     "white_and_outline_mismatches": 0,
-    "screen": "evidence\\8753d3db-casino\\caption.png",
+    "screen": "evidence\\4e6f3954-casino\\caption.png",
     "complete": true
-  },
-  "performance": {
-    "escape": {
-      "scene": "escape",
-      "max_caption_frame_ratio": 0.643397960889186,
-      "max_work_frame_ratio": 0.7133879324753468
-    },
-    "casino": {
-      "scene": "casino",
-      "max_caption_frame_ratio": 0.622589002172823,
-      "max_work_frame_ratio": 0.7336787564766839
-    }
   },
   "frozen_exe_cue_chd_and_roundtrip_pass": true,
   "chd_direct_boot_verified": false,
-  "previous_full_regression_version": "v0.85"
+  "previous_full_regression_version": "v0.85",
+  "previous_cpu_timing_version": "v0.856"
 }
