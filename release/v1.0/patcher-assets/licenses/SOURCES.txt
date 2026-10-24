@@ -1,0 +1,8 @@
+MAME chdman 0.289 (unchanged Windows binary)
+Full corresponding source: https://github.com/mamedev/mame/archive/refs/tags/mame0289.tar.gz
+Source tree: https://github.com/mamedev/mame/tree/mame0289
+MAME COPYING and GPL-2.0 are included.
+Python 3.13: https://www.python.org/downloads/source/
+Tcl/Tk: https://www.tcl.tk/software/tcltk/
+PyInstaller 6.22.3: https://github.com/pyinstaller/pyinstaller/tree/v6.22.3
+Font: x12y12pxMaruMinyaHangul (SIL OFL 1.1).

@@ -1,34 +1,169 @@
 {
-  "version": "v0.87",
-  "output_bin_sha256": "4e6f39541c3b8c87d72ec3c4538a57d7e25732acc249d83bc30021b0690d40f1",
-  "output_chd_sha256": "8dcd406e05eca8b4898dbad551eb471f2f233eefa885f7dc40546d47769ef96f",
-  "patcher_exe_sha256": "1289894b79065b32f3cbc34fb5c01fef7a13d41629014992f2dabf786cae837c",
-  "preservation": {
-    "output_sha256": "4e6f39541c3b8c87d72ec3c4538a57d7e25732acc249d83bc30021b0690d40f1",
-    "previous_sha256": "8753d3dbc185aee14237e7deb850d5cdb2c79f6b0c4fa335edd2c9b0bb53c0e4",
-    "removed_false_record": "T02-002405B9",
-    "retained_records_unchanged": true,
-    "retained_record_count": 2749,
-    "subtitle_ledger_unchanged": true,
-    "glyph_mapping_unchanged": true,
-    "native_menu_structure": {
-      "tables": 926,
-      "entries": 2442,
-      "control_bytes_identical_to_original": true
-    }
+  "native-opening-acceptance": {
+    "output_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+    "cold_boot": true,
+    "emulator_ram_modified": false,
+    "translated_records": 2750,
+    "subtitle_cues_in_build": 167,
+    "scope": "Opening CDDA tracks 6/7/8 progression and ADPCM-04-00; full game still pending",
+    "cdda": [
+      {
+        "track": 6,
+        "first": "evidence\\519c6853-cdda06-first.png",
+        "second": "evidence\\519c6853-cdda06-second.png",
+        "first_state_hex": "000601013c002d8803010001400eb900"
+      },
+      {
+        "track": 7,
+        "first": "evidence\\519c6853-cdda07-first.png",
+        "second": "evidence\\519c6853-cdda07-second.png",
+        "first_state_hex": "000701013c00428804010001400ebb00"
+      },
+      {
+        "track": 8,
+        "first": "evidence\\519c6853-cdda08-first.png",
+        "second": "evidence\\519c6853-cdda08-second.png",
+        "first_state_hex": "000801013c005d8802000001400e9d00"
+      }
+    ],
+    "title": "evidence\\519c6853-cold-title.png",
+    "adpcm_first": "evidence\\519c6853-adpcm04-visible.png",
+    "adpcm_caption_shown": true,
+    "adpcm_resource": {
+      "block": 14,
+      "palette": 15,
+      "allocation_failed": false
+    },
+    "pool": "evidence\\519c6853-pool.png",
+    "opening_progression_preserved": true
   },
-  "market": {
+  "native-ending-acceptance": {
+    "output_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+    "diagnostic_only": false,
+    "emulator_ram_modified": false,
+    "glyph_pixels": 12,
+    "space_pixels": 6,
+    "original_field_widths": [
+      120,
+      240
+    ],
+    "completed_fields_checked": 92,
+    "all_korean_glyphs_and_spaces_match": true,
+    "all_old_letter_tail_pixels_removed": true,
+    "scope": "Every completed 10/20-cell ending text field; original BIOS punctuation bitmaps excluded from BDF comparison."
+  },
+  "all-menu-native-pixel-acceptance": {
+    "output_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+    "diagnostic_only": true,
+    "emulator_ram_modified": true,
+    "scope": "Built tokens rendered by native text reader in 72px window; not a complete story route test",
+    "native_window_width_pixels": 72,
+    "labels_checked": 847,
+    "complete": true,
+    "all_menu_records": true,
+    "comparison": "All Hangul pixels, half spaces, blank tail and second line; original BIOS Latin/digit/symbol bitmap pixels excluded"
+  },
+  "market-recovery-acceptance": {
+    "output_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+    "version": "1.0",
+    "recovery_srm_sha256": "e3c54a0e4df760941700a57aeb588d571e08382903a2104771ba5938afcc6b98",
+    "recovery_srm_bytes": 2048,
+    "native_bram_checksum_valid": true,
+    "slot": "COBRA1",
+    "reconstructed_checkpoint": true,
+    "user_save_modified": false,
+    "emulator_game_code_modified": false,
+    "scope": "Recovery checkpoint after Duck/church chapter, created with native save UI after native church-exit transition and market movement; loaded into current cold-boot pool via BRAM. Not the user exact lost session.",
     "market_pointer_restored": true,
     "investigate_submenu_opens": true,
     "merchant_and_surroundings_responsive": true,
     "talk_and_movement_menus_responsive": true,
-    "cards_available_after_load": true,
-    "bar_clerk_recognizes_cards": true,
-    "reconstructed_checkpoint": true,
-    "emulator_game_code_modified": false
+    "complete": true
   },
-  "escape": {
-    "output_sha256": "4e6f39541c3b8c87d72ec3c4538a57d7e25732acc249d83bc30021b0690d40f1",
+  "castle-caption-acceptance": {
+    "output_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+    "diagnostic_only": true,
+    "emulator_game_code_modified": false,
+    "scope": "Current cold boot, native debug-room unlock, voice-room ADCE playback with gallery index set. Actual reported story location not identified. Separate controlled captured-SAT occupancy and text-busy diagnostics.",
+    "modified_memory": [
+      "voice-room selector 2B59",
+      "controlled selector inputs: captured native SPR flag and native SAT",
+      "native text-busy flag for coexistence path only"
+    ],
+    "voice_id": "ADPCM-CE-00",
+    "cue_count": 4,
+    "stable_samples": 177,
+    "stable_samples_per_cue": {
+      "ADCE-01": 60,
+      "ADCE-03": 35,
+      "ADCE-02": 51,
+      "ADCE-04": 31
+    },
+    "white_and_outline_mismatches": 0,
+    "all_cues_fixed_native_y": 216,
+    "native_dialogue_tiles_preserved": true,
+    "final_hide_and_cleanup_pass": true,
+    "occupancy_transition": [
+      {
+        "phase": "empty",
+        "y": 216,
+        "shown": 1,
+        "fallback": 0
+      },
+      {
+        "phase": "empty",
+        "y": 216,
+        "shown": 1,
+        "fallback": 0
+      },
+      {
+        "phase": "empty",
+        "y": 216,
+        "shown": 1,
+        "fallback": 0
+      },
+      {
+        "phase": "moving",
+        "y": 216,
+        "shown": 1,
+        "fallback": 0
+      },
+      {
+        "phase": "moving",
+        "y": 216,
+        "shown": 1,
+        "fallback": 0
+      },
+      {
+        "phase": "moving",
+        "y": 216,
+        "shown": 1,
+        "fallback": 0
+      },
+      {
+        "phase": "empty-again",
+        "y": 216,
+        "shown": 1,
+        "fallback": 0
+      },
+      {
+        "phase": "empty-again",
+        "y": 216,
+        "shown": 1,
+        "fallback": 0
+      },
+      {
+        "phase": "empty-again",
+        "y": 216,
+        "shown": 1,
+        "fallback": 0
+      }
+    ],
+    "concurrent_text_path_pass": true,
+    "complete": true
+  },
+  "escape-caption-acceptance": {
+    "output_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
     "diagnostic_only": true,
     "scope": "Current cold boot; synthetic in-memory save enters garage, then native key/bike menu and escape commands. No game code injection; not a full-story playthrough.",
     "user_save_modified": false,
@@ -43,11 +178,11 @@
     "positions": [
       216
     ],
-    "screen": "evidence\\4e6f3954-escape\\caption.png",
+    "screen": "evidence\\519c6853-escape\\caption.png",
     "complete": true
   },
-  "casino": {
-    "output_sha256": "4e6f39541c3b8c87d72ec3c4538a57d7e25732acc249d83bc30021b0690d40f1",
+  "casino-caption-acceptance": {
+    "output_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
     "diagnostic_only": true,
     "scope": "Current cold boot; isolated in-memory save enters casino, then native dialogue menu triggers AD74. No game code injection; not a full-story playthrough.",
     "user_save_modified": false,
@@ -58,11 +193,81 @@
     "stable_frames": 43,
     "concurrent_native_text_frames": 43,
     "white_and_outline_mismatches": 0,
-    "screen": "evidence\\4e6f3954-casino\\caption.png",
+    "screen": "evidence\\519c6853-casino\\caption.png",
     "complete": true
   },
-  "frozen_exe_cue_chd_and_roundtrip_pass": true,
-  "chd_direct_boot_verified": false,
-  "previous_full_regression_version": "v0.85",
-  "previous_cpu_timing_version": "v0.856"
+  "release-patcher-v1.0-acceptance": {
+    "output_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+    "exe_sha256": "07bfa3dff44a0f49416c6e8b4b1cafef7e8a3844a80dde0e7bcca0789570e0ce",
+    "version": "1.0",
+    "frozen_exe_tested": true,
+    "originals_unchanged": true,
+    "cue_and_chd_inputs_match_game_qa_build": true,
+    "generated_chd_roundtrip_exact": true,
+    "rejection_leaves_no_output": true,
+    "complete": true
+  },
+  "native-chd-boot": {
+    "output_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+    "chd_sha256": "0b7f943a84cb6b3a07cfabe17c2a5ade6dd95e6287d8dcd6a532b21184077584",
+    "cold_boot": true,
+    "direct_chd_boot": false,
+    "boot_method": "Hash-verified CHD extraction to BIN/CUE",
+    "direct_chd_boot_limitation": "The task Mednafen runtime failed to launch direct CHD input",
+    "emulator_ram_modified": false,
+    "dialogue_caption_scheduler_and_placement_match_build": true,
+    "save_load_prompt_clear_matches_build": true,
+    "resident_ending_erase_helper_matches_build": true,
+    "native_ending_dispatcher_matches_build": true,
+    "room_exit_display_gate_matches_build": true,
+    "vblank_caption_palette_hook_matches_build": true,
+    "wait_indicator_helpers_match_build": true,
+    "adpcm_busy_caption_tick_matches_build": true,
+    "hudson_copyright_centered": true,
+    "original_hudson_letter_edge_pixels_compared": 774,
+    "screen": "519c6853-chd-title.png"
+  },
+  "v1.0-preservation": {
+    "output_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+    "previous_sha256": "0030fdaa234415c52d26c1f73e390e94d9223e25379c5c88c9b14b5627a77b79",
+    "existing_records_unchanged": 2749,
+    "subtitle_ledger_unchanged": true,
+    "added_credit_id": "T02-03012BCE",
+    "added_credit": "한글화 기타 깎는 노인",
+    "added_glyph": "깎",
+    "native_executable_and_caption_code_unchanged": true,
+    "code_regions_compared": [
+      [
+        65536,
+        81920
+      ],
+      [
+        90112,
+        90368
+      ],
+      [
+        589824,
+        598016
+      ],
+      [
+        647168,
+        663552
+      ],
+      [
+        770048,
+        786432
+      ],
+      [
+        50397440,
+        50399232
+      ]
+    ],
+    "existing_glyph_bitmaps_verified_by": "evidence/verification.json",
+    "complete": true
+  },
+  "version": "v1.0",
+  "output_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+  "output_chd_sha256": "0b7f943a84cb6b3a07cfabe17c2a5ade6dd95e6287d8dcd6a532b21184077584",
+  "patcher_exe_sha256": "07bfa3dff44a0f49416c6e8b4b1cafef7e8a3844a80dde0e7bcca0789570e0ce",
+  "prerelease": false
 }
