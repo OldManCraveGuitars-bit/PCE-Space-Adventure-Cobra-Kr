@@ -2,23 +2,24 @@
 
 # PCE-Space-Adventure-Cobra-Kr
 
-**스페이스 코브라 — 흑룡왕의 전설 · PC Engine CD-ROM² 한국어 패치 v0.855**
+**스페이스 코브라 — 흑룡왕의 전설 · PC Engine CD-ROM² 한국어 패치 v0.856**
 
-우주 해적 코브라가 등장하는 SF 어드벤처 게임입니다. 장면을 조사하고 인물과 대화하며 사건을 풀어가는 작품으로, 음성 대사와 영상 연출을 한국어로 즐길 수 있도록 작업했습니다.
+우주 해적 코브라가 등장하는 SF 어드벤처입니다. 장면을 조사하고 인물과 대화하며 사건을 풀어가는 작품으로, 대사와 음성 연출을 한국어로 즐길 수 있도록 작업했습니다.
 
 ## 다운로드
 
-**[v0.855 릴리스 — Windows EXE 패처](https://github.com/OldManCraveGuitars-bit/PCE-Space-Adventure-Cobra-Kr/releases/tag/v0.855)**
+**[v0.856 릴리스 — Windows EXE 패처](https://github.com/OldManCraveGuitars-bit/PCE-Space-Adventure-Cobra-Kr/releases/tag/v0.856)**
 
-- `PCE-Space-Adventure-Cobra-Kr-v0.855-Patcher.exe`: 별도 Python 설치 없이 실행합니다.
+- `PCE-Space-Adventure-Cobra-Kr-v0.856-Patcher.exe`: 별도 Python 설치 없이 실행합니다.
 - ZIP에는 같은 EXE와 사용 안내·외부 구성요소 라이선스가 들어 있습니다.
 - 일본판 원본 CHD 또는 단일 BIN/CUE가 필요합니다. 원본 게임과 BIOS는 포함하지 않습니다.
 
-## v0.855 수정
+## v0.856 수정
 
-저장·불러오기 메뉴에서 이전 질문이 남아 ‘불러’가 두 번 보이던 현상을 수정했습니다. 파일 선택으로 넘어가면 이전 안내를 지우고 **‘저장할 파일을 골라 주세요.’** 또는 **‘불러올 파일을 골라 주세요.’**만 표시합니다. 질문이 다 나오기 전에 빠르게 선택하는 경우도 처리합니다.
-
-이 수정은 안내 화면 전환 두 곳에만 적용됩니다. 저장 파일 형식과 실제 저장·불러오기 처리, 대사·자막·글꼴·타이틀·음성은 v0.85와 동일합니다.
+- 에어바이크 탈출의 **‘좋아, 꽉 잡아. 간다!’** 자막을 한 줄(16픽셀) 내려 대사창 아래에 고정했습니다.
+- 카지노의 **‘자, 어떻게 할까?’** 음성이 재생돼도 자막이 나오지 않던 문제를 수정했습니다.
+- 두 음성은 원래 대사창이 글자를 출력하는 동안에도 아래쪽의 한 줄 공간에서 표시됩니다. 대사창 출력 여부나 움직이는 그림 상태에 따라 숨거나 위치가 바뀌지 않도록 했습니다.
+- v0.855의 저장·불러오기 안내 중복 수정도 포함합니다.
 
 ## 한글 패치 내용
 
@@ -45,12 +46,14 @@
 | --- | --- |
 | 원본 BIN 크기 | 252,291,984바이트 |
 | 원본 BIN SHA-256 | `d724ebe0a12c1055dd41e496d135ea62f8b09bb30f8cc6313c6bf4b6fadb5e1a` |
-| v0.855 결과 BIN SHA-256 | `d2485e5b4cf0e02d8425e65e62e252cab292a4cf91fb7da62ae30236c063c7aa` |
+| v0.856 결과 BIN SHA-256 | `8753d3dbc185aee14237e7deb850d5cdb2c79f6b0c4fa335edd2c9b0bb53c0e4` |
 
 ## 화면
 
-| 저장 안내 수정 | 불러오기 안내 수정 |
+| 탈출 자막 위치 수정 | 카지노 누락 자막 수정 |
 | --- | --- |
+| ![탈출 자막](screenshots/escape-v0856.png) | ![카지노 자막](screenshots/casino-v0856.png) |
+| 저장 안내 수정 | 불러오기 안내 수정 |
 | ![저장 안내](screenshots/save-prompt-v0855.png) | ![불러오기 안내](screenshots/load-prompt-v0855.png) |
 | 오프닝 음성 자막 | 본편 대사 |
 | ![오프닝 자막](screenshots/opening.png) | ![본편 대사](screenshots/dialogue.png) |
@@ -59,18 +62,18 @@
 | 시민들의 두 번째 도움 요청 | |
 | ![시민 자막](screenshots/citizens-subtitle.png) | |
 
-타이틀과 저장·불러오기 화면은 v0.855에서 촬영했습니다. 기존 본편 화면 5장은 v0.85 캡처이며 해당 그림·대사·자막은 변경하지 않았습니다. 여학생·시민은 장면 진입 재현 검사 화면입니다.
+타이틀·탈출·카지노는 v0.856 캡처입니다. 탈출·카지노는 시험용 저장 진입 후 원래 메뉴와 음성 명령으로 재현했습니다. 저장 안내는 v0.855, 나머지 본편 화면은 v0.85의 변경되지 않은 화면입니다.
 
 ## 검수 범위
 
-v0.855에서 새 부팅·오프닝 진행, 저장/불러오기 안내 6조건, 빠른 입력·취소·시험용 저장 후 불러오기, EXE의 CHD/CUE 적용과 결과 일치를 확인했습니다. v0.85 대비 안내 전환 두 코드 구간 외에는 게임 데이터가 동일함을 검사했습니다. [검수 요약](QA.md)을 참고하세요.
+새 부팅과 오프닝 진행, 탈출·카지노의 자막 전체 픽셀·고정 위치·처리 시간, EXE의 CHD/CUE 적용과 결과 일치를 확인했습니다. 카지노에서는 원래 대사창이 출력 중인 화면도 검사했습니다. [검수 요약](QA.md)에 표본 수와 범위를 기록했습니다.
 
-v0.85의 전체 원장·선택지 848개·자막 165개·엔딩 91개 영역·글꼴 830자 검수는 [이전 보고서](https://github.com/OldManCraveGuitars-bit/PCE-Space-Adventure-Cobra-Kr/blob/v0.85/QA.md)에 있습니다. 이번에는 그 전체 실행 검사를 반복하지 않았습니다.
+v0.855 대비 변경은 자막 표시 조건과 위치 선택 코드 두 구간입니다. 번역·글꼴·타이틀·음성·원래 장면 스크립트는 동일합니다. 이전 전체 원장·선택지·자막·엔딩·글꼴 검사는 [v0.85 기록](https://github.com/OldManCraveGuitars-bit/PCE-Space-Adventure-Cobra-Kr/blob/v0.85/QA.md)을 유지하며, 이번에 전부 반복하지 않았습니다.
 
 시험판입니다. 전 스토리 분기 완주·모든 실기 환경·사람의 전체 음성 청취 검수는 완료하지 않았습니다.
 
 ## 패처 소스
 
-`tools/release_patcher.py`와 `release/v0.855/patcher-assets/`로 패처를 다시 만들 수 있습니다. Python 환경에서 `requirements-build.txt`를 설치한 뒤 `tools/build-patcher.ps1`을 실행합니다.
+`tools/release_patcher.py`와 `release/v0.856/patcher-assets/`로 다시 만들 수 있습니다. Python 환경에서 `requirements-build.txt`를 설치한 뒤 `tools/build-patcher.ps1`을 실행합니다.
 
 [외부 구성요소와 글꼴 안내](THIRD_PARTY_NOTICES.md). 게임과 원작 자산의 권리는 각 권리자에게 있습니다.

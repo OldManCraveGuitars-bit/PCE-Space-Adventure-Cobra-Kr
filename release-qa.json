@@ -1,113 +1,71 @@
 {
-  "version": "v0.855",
-  "output_bin_sha256": "d2485e5b4cf0e02d8425e65e62e252cab292a4cf91fb7da62ae30236c063c7aa",
-  "output_chd_sha256": "8c0bf0762c45ced5cf21d359a00de14bca03f46b7e53e0255dfe5e975e8072ca",
-  "patcher_exe_sha256": "8d9ab23eb0c4171c674963b018ac234855ae1bbcc79c1fcd550c2ef22acc7d04",
+  "version": "v0.856",
+  "output_bin_sha256": "8753d3dbc185aee14237e7deb850d5cdb2c79f6b0c4fa335edd2c9b0bb53c0e4",
+  "output_chd_sha256": "62451e9de5b231707861cd05057f086d70310e37d9cdfb7dcbb803bcd310dd66",
+  "patcher_exe_sha256": "4e6f551563e8ff08cdd9f128620b2e74c53cb7dd775c5d1f7551c558009f6b8f",
   "preservation": {
-    "baseline_sha256": "a59fa84622cc61d15e501cd2391e67191bc61cd1b72bc9ab0f94c75c21258873",
-    "output_sha256": "d2485e5b4cf0e02d8425e65e62e252cab292a4cf91fb7da62ae30236c063c7aa",
-    "only_two_code_ranges_changed": true,
-    "reserved_code_bytes": 9,
+    "output_sha256": "8753d3dbc185aee14237e7deb850d5cdb2c79f6b0c4fa335edd2c9b0bb53c0e4",
+    "previous_sha256": "d2485e5b4cf0e02d8425e65e62e252cab292a4cf91fb7da62ae30236c063c7aa",
+    "only_scheduler_and_band_selector_changed": true,
     "ranges": [
       {
-        "offset": 70870,
-        "bytes": 6,
-        "before": "f964faa90e85",
-        "after": "20b2504c7a50"
+        "start": "0x90b00",
+        "end": "0x90c00"
       },
       {
-        "offset": 74627,
-        "bytes": 3,
-        "before": "20b250",
-        "after": "20d654"
+        "start": "0xbd600",
+        "end": "0xbd900"
       }
     ],
-    "all_dialogue_and_subtitles_unchanged": true,
-    "font_and_title_and_voice_runtime_unchanged": true,
-    "native_save_format_and_file_io_code_unchanged": true,
-    "previous_full_regression_version": "v0.85",
-    "previous_full_regression_rerun": false,
-    "new_validation": [
-      "Current cold boot opening 6/7/8 and first voiced caption",
-      "Six rapid/normal native save/load prompt cases with full Hangul pixel and blank-window checks",
-      "Cancel and isolated native BRAM save/load roundtrip",
-      "Current complete build/audio/EDC/ECC/patch verification"
-    ]
+    "text_fonts_audio_and_native_scene_scripts_unchanged": true
   },
-  "save_load_prompt_check": {
-    "output_sha256": "d2485e5b4cf0e02d8425e65e62e252cab292a4cf91fb7da62ae30236c063c7aa",
-    "version": "0.855",
-    "scope": "Native save/load menu input from current cold-boot pool; six prompt/cancel cases and isolated BRAM save/load roundtrip",
-    "prompt_cases": [
-      {
-        "mode": "save",
-        "prompt_wait_frames": 8,
-        "previous_prompt_was_still_typing": true,
-        "korean_glyphs_and_half_spaces_match": true,
-        "old_prompt_pixels": 0,
-        "extra_text_rows": 0,
-        "cancel_restores_native_menu": true
-      },
-      {
-        "mode": "load",
-        "prompt_wait_frames": 8,
-        "previous_prompt_was_still_typing": true,
-        "korean_glyphs_and_half_spaces_match": true,
-        "old_prompt_pixels": 0,
-        "extra_text_rows": 0,
-        "cancel_restores_native_menu": true
-      },
-      {
-        "mode": "save",
-        "prompt_wait_frames": 30,
-        "previous_prompt_was_still_typing": true,
-        "korean_glyphs_and_half_spaces_match": true,
-        "old_prompt_pixels": 0,
-        "extra_text_rows": 0,
-        "cancel_restores_native_menu": true
-      },
-      {
-        "mode": "load",
-        "prompt_wait_frames": 30,
-        "previous_prompt_was_still_typing": true,
-        "korean_glyphs_and_half_spaces_match": true,
-        "old_prompt_pixels": 0,
-        "extra_text_rows": 0,
-        "cancel_restores_native_menu": true
-      },
-      {
-        "mode": "save",
-        "prompt_wait_frames": 180,
-        "previous_prompt_was_still_typing": false,
-        "korean_glyphs_and_half_spaces_match": true,
-        "old_prompt_pixels": 0,
-        "extra_text_rows": 0,
-        "cancel_restores_native_menu": true
-      },
-      {
-        "mode": "load",
-        "prompt_wait_frames": 180,
-        "previous_prompt_was_still_typing": false,
-        "korean_glyphs_and_half_spaces_match": true,
-        "old_prompt_pixels": 0,
-        "extra_text_rows": 0,
-        "cancel_restores_native_menu": true
-      }
-    ],
-    "prompt_test_emulator_ram_modified": false,
-    "save_load_roundtrip_uses_isolated_in_memory_bram": true,
-    "native_bram_checksum_valid": true,
-    "native_save_load_completed": true,
+  "escape": {
+    "output_sha256": "8753d3dbc185aee14237e7deb850d5cdb2c79f6b0c4fa335edd2c9b0bb53c0e4",
+    "diagnostic_only": true,
+    "scope": "Current cold boot; synthetic in-memory save enters garage, then native key/bike menu and escape commands. No game code injection; not a full-story playthrough.",
     "user_save_modified": false,
+    "emulator_game_code_modified": false,
+    "caption": "좋아, 꽉 잡아. 간다!",
+    "voice_id": "ADPCM-29-00",
+    "native_y": 216,
+    "moved_down_pixels": 16,
+    "stable_frames": 63,
+    "white_and_outline_mismatches": 0,
+    "fallback_used": false,
+    "positions": [
+      216
+    ],
+    "screen": "evidence\\8753d3db-escape\\caption.png",
     "complete": true
   },
-  "patcher_checks": {
-    "frozen_exe_chd_and_cue_pass": true,
-    "generated_chd_roundtrip_exact": true,
-    "originals_unchanged": true,
-    "overwrite_and_invalid_input_rejected": true
+  "casino": {
+    "output_sha256": "8753d3dbc185aee14237e7deb850d5cdb2c79f6b0c4fa335edd2c9b0bb53c0e4",
+    "diagnostic_only": true,
+    "scope": "Current cold boot; isolated in-memory save enters casino, then native dialogue menu triggers AD74. No game code injection; not a full-story playthrough.",
+    "user_save_modified": false,
+    "emulator_game_code_modified": false,
+    "voice_id": "ADPCM-74-00",
+    "caption": "자, 어떻게 할까?",
+    "native_y": 216,
+    "stable_frames": 43,
+    "concurrent_native_text_frames": 43,
+    "white_and_outline_mismatches": 0,
+    "screen": "evidence\\8753d3db-casino\\caption.png",
+    "complete": true
   },
-  "fresh_boot_and_opening_pass": true,
+  "performance": {
+    "escape": {
+      "scene": "escape",
+      "max_caption_frame_ratio": 0.643397960889186,
+      "max_work_frame_ratio": 0.7133879324753468
+    },
+    "casino": {
+      "scene": "casino",
+      "max_caption_frame_ratio": 0.622589002172823,
+      "max_work_frame_ratio": 0.7336787564766839
+    }
+  },
+  "frozen_exe_cue_chd_and_roundtrip_pass": true,
   "chd_direct_boot_verified": false,
   "previous_full_regression_version": "v0.85"
 }

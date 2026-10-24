@@ -1,11 +1,11 @@
-"""Standalone v0.855 installer. Bundles a delta; the user supplies the game."""
+"""Standalone v0.856 installer. Bundles a delta; the user supplies the game."""
 from __future__ import annotations
 import argparse,hashlib,json,os,queue,re,shutil,struct,subprocess,sys,tempfile,threading,zlib
 from pathlib import Path
 
-VERSION='0.855'
-NAME='Space Adventure Cobra KR v0.855'
-RES=Path(getattr(sys,'_MEIPASS',Path(__file__).resolve().parents[1]/'release/v0.855/patcher-assets'))
+VERSION='0.856'
+NAME='Space Adventure Cobra KR v0.856'
+RES=Path(getattr(sys,'_MEIPASS',Path(__file__).resolve().parents[1]/'release/v0.856/patcher-assets'))
 
 def sha(path):
     with Path(path).open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
@@ -88,7 +88,7 @@ def apply(source,output,make_chd=True,log=lambda text:None):
 def gui():
     import tkinter as tk
     from tkinter import ttk,filedialog,messagebox
-    root=tk.Tk();root.title('PCE 스페이스 코브라 한국어 패치 v0.855');root.geometry('780x590');root.minsize(740,570)
+    root=tk.Tk();root.title('PCE 스페이스 코브라 한국어 패치 v0.856');root.geometry('780x590');root.minsize(740,570)
     root.option_add('*Font',('맑은 고딕',10));style=ttk.Style(root);style.theme_use('clam')
     style.configure('TButton',padding=7);style.configure('Title.TLabel',font=('맑은 고딕',18,'bold'))
     main=ttk.Frame(root,padding=24);main.pack(fill='both',expand=True);main.columnconfigure(0,weight=1)
@@ -97,7 +97,7 @@ def gui():
     ttk.Label(header,image=picture).pack(side='left',padx=(0,20))
     words=ttk.Frame(header);words.pack(side='left',fill='x',expand=True)
     ttk.Label(words,text='스페이스 코브라',style='Title.TLabel').pack(anchor='w')
-    ttk.Label(words,text='흑룡왕의 전설 · 한국어 패치 v0.855').pack(anchor='w',pady=(4,10))
+    ttk.Label(words,text='흑룡왕의 전설 · 한국어 패치 v0.856').pack(anchor='w',pady=(4,10))
     ttk.Label(words,text='일본판 원본 CHD 또는 단일 BIN/CUE를 선택하세요.\n새 폴더에 한국어판을 생성합니다.').pack(anchor='w')
     src=tk.StringVar();dst=tk.StringVar();chd=tk.BooleanVar(value=True);events=queue.Queue();busy=False
     def choose_source():
@@ -150,7 +150,7 @@ def gui():
     root.protocol('WM_DELETE_WINDOW',close);poll();root.mainloop()
 
 def main():
-    parser=argparse.ArgumentParser(description='PCE Space Adventure Cobra KR v0.855 patcher')
+    parser=argparse.ArgumentParser(description='PCE Space Adventure Cobra KR v0.856 patcher')
     parser.add_argument('--input',type=Path);parser.add_argument('--output',type=Path)
     parser.add_argument('--no-chd',action='store_true');parser.add_argument('--report',type=Path)
     parser.add_argument('--self-test',action='store_true');args=parser.parse_args()
