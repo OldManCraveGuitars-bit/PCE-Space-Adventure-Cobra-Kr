@@ -2,6 +2,12 @@
 
 ## 비공식 한글화 정식 버전 v1.0
 
+**2026-10-25 패처 r2 수정:** 한글 출력 경로에서 CHD 생성 중 `Error parsing input file` / `Illegal byte sequence`로 실패하던 문제를 수정했습니다. 아래 **r2 파일**을 받으세요.
+
+**[수정 패처 EXE 다운로드](https://github.com/OldManCraveGuitars-bit/PCE-Space-Adventure-Cobra-Kr/releases/download/v1.0/PCE-Space-Adventure-Cobra-Kr-v1.0-r2-Patcher.exe)** · [ZIP 다운로드](https://github.com/OldManCraveGuitars-bit/PCE-Space-Adventure-Cobra-Kr/releases/download/v1.0/PCE-Space-Adventure-Cobra-Kr-v1.0-r2.zip)
+
+한국어·일본어 ANSI 및 UTF-16 CUE와 여러 BIN 트랙도 처리합니다. 지원 원본의 SHA-256 검증은 유지합니다. **게임 내용과 결과 BIN은 기존 v1.0과 같으므로 이미 패치를 완료했다면 다시 적용할 필요가 없습니다.** [r2 소스](https://github.com/OldManCraveGuitars-bit/PCE-Space-Adventure-Cobra-Kr/tree/patcher-v1.0-r2)
+
 PC Engine CD-ROM²용 **스페이스 코브라 — 흑룡왕의 전설**의 팬 한글 패치입니다. 우주 해적 코브라가 되어 장면을 조사하고 대화하며 진행하는 SF 어드벤처를 12×12 한글과 게임 내부 음성 자막으로 즐길 수 있습니다.
 
 **한글화: 기타 깎는 노인**
@@ -19,7 +25,7 @@ PC Engine CD-ROM²용 **스페이스 코브라 — 흑룡왕의 전설**의 팬 
 
 ### 설치
 
-EXE에서 **일본판 원본 CHD 또는 단일 BIN/CUE**를 선택하고 새 폴더에 적용하세요. 별도 Python은 필요 없습니다. ZIP에는 같은 EXE와 안내·라이선스가 들어 있습니다.
+r2 EXE에서 **일본판 원본 CHD 또는 BIN/CUE**를 선택하고 새 폴더에 적용하세요. 여러 BIN은 모든 트랙과 함께 있는 CUE를 선택합니다. 별도 Python은 필요 없습니다. r2 ZIP에는 같은 EXE와 안내·라이선스가 들어 있습니다. 약 900MB의 여유 공간이 필요하며 기존 출력 폴더는 덮어쓰지 않습니다.
 
 **Super CD-ROM² System Card 3.0**이 필요합니다. 이전 한글판에 덧씌우지 말고, 강제저장 자동 로딩을 끈 뒤 새 이미지로 부팅하세요. 게임 내 저장은 새 게임 파일의 기본 이름에 맞춰 사용합니다.
 

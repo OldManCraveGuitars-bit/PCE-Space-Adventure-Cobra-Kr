@@ -1,0 +1,285 @@
+{
+  "version": "1.0",
+  "patcher_revision": 2,
+  "exe_sha256": "2e307102e8da7c2329051c068fd4dd0e47beb40d1716b99ce701aa79cf5a73e2",
+  "game_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+  "originals_unchanged": true,
+  "unicode_exe_source_output_temp_paths": true,
+  "system32_only_path": true,
+  "tests": [
+    {
+      "name": "r2-assets-clean-env",
+      "exit_code": 0,
+      "seconds": 2.78,
+      "report": {
+        "success": true,
+        "version": "1.0",
+        "patcher_revision": 2,
+        "frozen": true,
+        "assets_verified": true,
+        "target_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d"
+      }
+    },
+    {
+      "name": "r2-unicode-bin",
+      "exit_code": 0,
+      "seconds": 4.01,
+      "independent_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+      "report": {
+        "version": "1.0",
+        "patcher_revision": 2,
+        "success": true,
+        "source_sha256": "d724ebe0a12c1055dd41e496d135ea62f8b09bb30f8cc6313c6bf4b6fadb5e1a",
+        "output_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+        "original_modified": false,
+        "files": [
+          "Space Adventure Cobra KR v1.0.bin",
+          "Space Adventure Cobra KR v1.0.cue"
+        ]
+      }
+    },
+    {
+      "name": "r2-cue-utf-8",
+      "exit_code": 0,
+      "seconds": 4.55,
+      "independent_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+      "report": {
+        "version": "1.0",
+        "patcher_revision": 2,
+        "success": true,
+        "source_sha256": "d724ebe0a12c1055dd41e496d135ea62f8b09bb30f8cc6313c6bf4b6fadb5e1a",
+        "output_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+        "original_modified": false,
+        "files": [
+          "Space Adventure Cobra KR v1.0.bin",
+          "Space Adventure Cobra KR v1.0.cue"
+        ]
+      }
+    },
+    {
+      "name": "r2-cue-utf-8-sig",
+      "exit_code": 0,
+      "seconds": 4.43,
+      "independent_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+      "report": {
+        "version": "1.0",
+        "patcher_revision": 2,
+        "success": true,
+        "source_sha256": "d724ebe0a12c1055dd41e496d135ea62f8b09bb30f8cc6313c6bf4b6fadb5e1a",
+        "output_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+        "original_modified": false,
+        "files": [
+          "Space Adventure Cobra KR v1.0.bin",
+          "Space Adventure Cobra KR v1.0.cue"
+        ]
+      }
+    },
+    {
+      "name": "r2-cue-cp949",
+      "exit_code": 0,
+      "seconds": 4.07,
+      "independent_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+      "report": {
+        "version": "1.0",
+        "patcher_revision": 2,
+        "success": true,
+        "source_sha256": "d724ebe0a12c1055dd41e496d135ea62f8b09bb30f8cc6313c6bf4b6fadb5e1a",
+        "output_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+        "original_modified": false,
+        "files": [
+          "Space Adventure Cobra KR v1.0.bin",
+          "Space Adventure Cobra KR v1.0.cue"
+        ]
+      }
+    },
+    {
+      "name": "r2-cue-cp932",
+      "exit_code": 0,
+      "seconds": 3.75,
+      "independent_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+      "report": {
+        "version": "1.0",
+        "patcher_revision": 2,
+        "success": true,
+        "source_sha256": "d724ebe0a12c1055dd41e496d135ea62f8b09bb30f8cc6313c6bf4b6fadb5e1a",
+        "output_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+        "original_modified": false,
+        "files": [
+          "Space Adventure Cobra KR v1.0.bin",
+          "Space Adventure Cobra KR v1.0.cue"
+        ]
+      }
+    },
+    {
+      "name": "r2-cue-utf-16",
+      "exit_code": 0,
+      "seconds": 3.87,
+      "independent_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+      "report": {
+        "version": "1.0",
+        "patcher_revision": 2,
+        "success": true,
+        "source_sha256": "d724ebe0a12c1055dd41e496d135ea62f8b09bb30f8cc6313c6bf4b6fadb5e1a",
+        "output_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+        "original_modified": false,
+        "files": [
+          "Space Adventure Cobra KR v1.0.bin",
+          "Space Adventure Cobra KR v1.0.cue"
+        ]
+      }
+    },
+    {
+      "name": "r2-cue-unquoted",
+      "exit_code": 0,
+      "seconds": 3.72,
+      "independent_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+      "report": {
+        "version": "1.0",
+        "patcher_revision": 2,
+        "success": true,
+        "source_sha256": "d724ebe0a12c1055dd41e496d135ea62f8b09bb30f8cc6313c6bf4b6fadb5e1a",
+        "output_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+        "original_modified": false,
+        "files": [
+          "Space Adventure Cobra KR v1.0.bin",
+          "Space Adventure Cobra KR v1.0.cue"
+        ]
+      }
+    },
+    {
+      "name": "r2-cue-split",
+      "exit_code": 0,
+      "seconds": 3.96,
+      "independent_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+      "report": {
+        "version": "1.0",
+        "patcher_revision": 2,
+        "success": true,
+        "source_sha256": "d724ebe0a12c1055dd41e496d135ea62f8b09bb30f8cc6313c6bf4b6fadb5e1a",
+        "output_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+        "original_modified": false,
+        "files": [
+          "Space Adventure Cobra KR v1.0.bin",
+          "Space Adventure Cobra KR v1.0.cue"
+        ]
+      }
+    },
+    {
+      "name": "r2-existing-output",
+      "exit_code": 1,
+      "seconds": 1.87,
+      "report": {
+        "success": false,
+        "rejected_as_expected": true
+      }
+    },
+    {
+      "name": "r2-already-patched",
+      "exit_code": 1,
+      "seconds": 2.57,
+      "report": {
+        "success": false,
+        "rejected_as_expected": true
+      }
+    },
+    {
+      "name": "r2-wrong-hash",
+      "exit_code": 1,
+      "seconds": 3.02,
+      "report": {
+        "success": false,
+        "rejected_as_expected": true
+      }
+    },
+    {
+      "name": "r2-missing-bin",
+      "exit_code": 1,
+      "seconds": 2.05,
+      "report": {
+        "success": false,
+        "rejected_as_expected": true
+      }
+    },
+    {
+      "name": "r2-invalid-cue",
+      "exit_code": 1,
+      "seconds": 2.18,
+      "report": {
+        "success": false,
+        "rejected_as_expected": true
+      }
+    },
+    {
+      "name": "r2-broken-chd",
+      "exit_code": 1,
+      "seconds": 2.1,
+      "report": {
+        "success": false,
+        "rejected_as_expected": true
+      }
+    },
+    {
+      "name": "r2-unicode-chd-roundtrip",
+      "exit_code": 0,
+      "seconds": 29.17,
+      "independent_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+      "roundtrip_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+      "report": {
+        "version": "1.0",
+        "patcher_revision": 2,
+        "success": true,
+        "source_sha256": "d724ebe0a12c1055dd41e496d135ea62f8b09bb30f8cc6313c6bf4b6fadb5e1a",
+        "output_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+        "original_modified": false,
+        "files": [
+          "Space Adventure Cobra KR v1.0.bin",
+          "Space Adventure Cobra KR v1.0.cue",
+          "Space Adventure Cobra KR v1.0.chd"
+        ],
+        "output_chd_sha256": "0b7f943a84cb6b3a07cfabe17c2a5ade6dd95e6287d8dcd6a532b21184077584",
+        "chd_verified": true
+      }
+    },
+    {
+      "name": "r2-cp949-cue-chd-roundtrip",
+      "exit_code": 0,
+      "seconds": 20.91,
+      "independent_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+      "roundtrip_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+      "report": {
+        "version": "1.0",
+        "patcher_revision": 2,
+        "success": true,
+        "source_sha256": "d724ebe0a12c1055dd41e496d135ea62f8b09bb30f8cc6313c6bf4b6fadb5e1a",
+        "output_bin_sha256": "519c6853163e5c172323692165bee73fb5958a6a9522d4ff7b88d7aac2bb873d",
+        "original_modified": false,
+        "files": [
+          "Space Adventure Cobra KR v1.0.bin",
+          "Space Adventure Cobra KR v1.0.cue",
+          "Space Adventure Cobra KR v1.0.chd"
+        ],
+        "output_chd_sha256": "0b7f943a84cb6b3a07cfabe17c2a5ade6dd95e6287d8dcd6a532b21184077584",
+        "chd_verified": true
+      }
+    }
+  ],
+  "gui_capture_limitation": "Computer Use screenshot timed out twice; frozen command-line apply uses the same apply() as GUI.",
+  "complete": true,
+  "assets": [
+    {
+      "name": "PCE-Space-Adventure-Cobra-Kr-v1.0-r2-Patcher.exe",
+      "sha256": "2e307102e8da7c2329051c068fd4dd0e47beb40d1716b99ce701aa79cf5a73e2",
+      "bytes": 12985595
+    },
+    {
+      "name": "PCE-Space-Adventure-Cobra-Kr-v1.0-r2.zip",
+      "sha256": "7464d385fcce473a3ab72e3423dff9cb18d87da908cd4e674bec055368821c7f",
+      "bytes": 12763597
+    },
+    {
+      "name": "SHA256SUMS-r2.txt",
+      "sha256": "4ad9997fd0106627e013ad4052c2234b25e5498418621c7f9f48cfc7efee5bab",
+      "bytes": 224
+    }
+  ]
+}

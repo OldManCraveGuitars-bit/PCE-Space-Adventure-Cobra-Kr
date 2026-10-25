@@ -4,14 +4,15 @@ import argparse,hashlib,json,os,queue,re,shutil,struct,subprocess,sys,tempfile,t
 from pathlib import Path
 
 VERSION='1.0'
+PATCHER_REVISION=2
 NAME='Space Adventure Cobra KR v1.0'
 RES=Path(getattr(sys,'_MEIPASS',Path(__file__).resolve().parents[1]/'release/v1.0/patcher-assets'))
 
 def sha(path):
     with Path(path).open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 
-def run(command):
-    r=subprocess.run([str(x) for x in command],capture_output=True,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
+def run(command,cwd=None):
+    r=subprocess.run([str(x) for x in command],cwd=cwd,capture_output=True,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
     if r.returncode:
         raise RuntimeError((r.stdout+r.stderr).decode('utf-8','replace')[-1800:] or 'CHD 도구 실행 실패')
     return (r.stdout+r.stderr).decode('utf-8','replace')
@@ -30,11 +31,44 @@ def source_bin(source,work,log):
         return work/'original.bin'
     if suffix=='.cue':
         raw=source.read_bytes()
-        try:text=raw.decode('utf-8-sig')
-        except UnicodeDecodeError:text=raw.decode('cp932')
-        names=re.findall(r'^\s*FILE\s+"([^"]+)"\s+BINARY\s*$',text,re.M|re.I)
-        if len(names)!=1:raise ValueError('단일 BIN을 사용하는 CUE만 지원합니다. CHD 또는 원본 단일 BIN을 선택하세요.')
-        return (source.parent/names[0]).resolve()
+        # ANSI CUE files have no encoding marker. Resolve every referenced file
+        # before choosing a decoding; both Korean and Japanese can decode under
+        # another code page without raising an exception.
+        encodings=['utf-16'] if raw.startswith((b'\xff\xfe',b'\xfe\xff')) else ['utf-8-sig','cp949','cp932']
+        candidates=[]
+        for encoding in encodings:
+            try:text=raw.decode(encoding)
+            except UnicodeDecodeError:continue
+            lines=re.findall(r'^\s*FILE\s+(.+?)\s*$',text,re.M|re.I)
+            paths=[]
+            for line in lines:
+                match=re.fullmatch(r'(?:"([^"]+)"|([^\s"]+))\s+BINARY',line,re.I)
+                if not match:break
+                paths.append((source.parent/(match[1] or match[2])).resolve())
+            else:
+                if paths:
+                    candidates.append(paths)
+                    if all(p.is_file() for p in paths):break
+                    continue
+            paths=[]
+        else:paths=[]
+        if not paths:
+            if candidates:
+                missing=next(p for p in candidates[0] if not p.is_file())
+                raise FileNotFoundError('CUE에 기록된 BIN 파일을 찾을 수 없습니다: '+missing.name+'\nCUE와 모든 BIN을 함께 압축 해제하고 파일 이름을 확인하세요.')
+            raise ValueError('CUE를 읽을 수 없습니다. UTF-8·한국어/일본어 ANSI·UTF-16 형식의 BINARY BIN/CUE를 선택하세요.')
+        if len(paths)==1:return paths[0]
+        # Only a lossless track concatenation is supported. patch_bin still
+        # checks the exact original size and SHA-256 before applying anything.
+        if len(set(paths))!=len(paths):raise ValueError('같은 BIN이 중복된 CUE입니다. 원본 CHD 또는 단일 BIN을 선택하세요.')
+        if sum(p.stat().st_size for p in paths)!=assets()['source_size']:
+            raise ValueError('CUE의 전체 BIN 크기가 지원 일본판 원본과 다릅니다. 모든 트랙이 있는지 확인하세요.')
+        log('여러 BIN 트랙을 확인하는 중…')
+        merged=work/'original.bin'
+        with merged.open('xb') as dst:
+            for path in paths:
+                with path.open('rb') as src:shutil.copyfileobj(src,dst,4*1024*1024)
+        return merged
     if suffix=='.bin':return source
     raise ValueError('원본 CHD, BIN 또는 CUE 파일을 선택하세요.')
 
@@ -71,11 +105,14 @@ def apply(source,output,make_chd=True,log=lambda text:None):
         target=payload/(NAME+'.bin');patch_bin(original,RES/'patch.ckp',target,m,log)
         cue=payload/(NAME+'.cue')
         cue.write_text((RES/'output.cue').read_text(encoding='utf-8').replace('cobra-ko-experimental.bin',target.name),encoding='utf-8',newline='\n')
-        report={'version':VERSION,'success':True,'source_sha256':m['source_sha256'],'output_bin_sha256':sha(target),'original_modified':False,'files':[target.name,cue.name]}
+        report={'version':VERSION,'patcher_revision':PATCHER_REVISION,'success':True,'source_sha256':m['source_sha256'],'output_bin_sha256':sha(target),'original_modified':False,'files':[target.name,cue.name]}
         if make_chd:
             chd=payload/(NAME+'.chd');log('한국어판 CHD 압축 중…')
-            run([RES/'chdman.exe','createcd','-i',cue,'-o',chd]);log('CHD 무결성 확인 중…')
-            run([RES/'chdman.exe','verify','-i',chd])
+            # chdman's CUE parser cannot use a non-ASCII directory in the input
+            # argument on Windows. Keep generated names ASCII and set cwd;
+            # the user's Unicode output directory is otherwise unchanged.
+            run([RES/'chdman.exe','createcd','-i',cue.name,'-o',chd.name],cwd=payload);log('CHD 무결성 확인 중…')
+            run([RES/'chdman.exe','verify','-i',chd.name],cwd=payload)
             report.update(output_chd_sha256=sha(chd),chd_verified=True);report['files'].append(chd.name)
         (payload/'patch-result.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
         if output.exists():raise FileExistsError('출력 폴더가 생성되어 작업을 중단했습니다. 다른 폴더를 선택하세요.')
@@ -88,7 +125,7 @@ def apply(source,output,make_chd=True,log=lambda text:None):
 def gui():
     import tkinter as tk
     from tkinter import ttk,filedialog,messagebox
-    root=tk.Tk();root.title('PCE 스페이스 코브라 비공식 한글화 v1.0');root.geometry('780x590');root.minsize(740,570)
+    root=tk.Tk();root.title('PCE 스페이스 코브라 비공식 한글화 v1.0 · 패처 r2');root.geometry('780x590');root.minsize(740,570)
     root.option_add('*Font',('맑은 고딕',10));style=ttk.Style(root);style.theme_use('clam')
     style.configure('TButton',padding=7);style.configure('Title.TLabel',font=('맑은 고딕',18,'bold'))
     main=ttk.Frame(root,padding=24);main.pack(fill='both',expand=True);main.columnconfigure(0,weight=1)
@@ -97,8 +134,8 @@ def gui():
     ttk.Label(header,image=picture).pack(side='left',padx=(0,20))
     words=ttk.Frame(header);words.pack(side='left',fill='x',expand=True)
     ttk.Label(words,text='스페이스 코브라',style='Title.TLabel').pack(anchor='w')
-    ttk.Label(words,text='비공식 한글화 정식 버전 v1.0').pack(anchor='w',pady=(4,10))
-    ttk.Label(words,text='일본판 원본 CHD 또는 단일 BIN/CUE를 선택하세요.\n새 폴더에 한국어판을 생성합니다.').pack(anchor='w')
+    ttk.Label(words,text='비공식 한글화 정식 버전 v1.0 · 패처 r2').pack(anchor='w',pady=(4,10))
+    ttk.Label(words,text='일본판 원본 CHD 또는 BIN/CUE를 선택하세요.\n여러 BIN으로 나뉜 원본은 CUE를 선택하세요.').pack(anchor='w')
     src=tk.StringVar();dst=tk.StringVar();chd=tk.BooleanVar(value=True);events=queue.Queue();busy=False
     def choose_source():
         value=filedialog.askopenfilename(title='일본판 원본 선택',filetypes=[('게임 이미지','*.chd *.cue *.bin'),('모든 파일','*.*')])
@@ -161,7 +198,7 @@ def main():
     if not args.input and not args.self_test:gui();return 0
     try:
         if args.self_test:
-            m=assets();result={'success':True,'version':VERSION,'frozen':bool(getattr(sys,'frozen',False)),'assets_verified':True,'target_sha256':m['target_sha256']}
+            m=assets();result={'success':True,'version':VERSION,'patcher_revision':PATCHER_REVISION,'frozen':bool(getattr(sys,'frozen',False)),'assets_verified':True,'target_sha256':m['target_sha256']}
         else:
             if args.output is None:raise ValueError('--output 새 폴더가 필요합니다.')
             result=apply(args.input,args.output,not args.no_chd,log=lambda s:print(s,flush=True) if sys.stdout else None)

@@ -12,9 +12,18 @@ PC Engine CD-ROM²용 SF 어드벤처입니다. 우주 해적 코브라가 되�
 
 **[v1.0 정식 릴리스 — Windows EXE 패처](https://github.com/OldManCraveGuitars-bit/PCE-Space-Adventure-Cobra-Kr/releases/tag/v1.0)**
 
-- `PCE-Space-Adventure-Cobra-Kr-v1.0-Patcher.exe`: 별도 Python 설치 없이 실행하는 패처입니다.
-- `PCE-Space-Adventure-Cobra-Kr-v1.0.zip`: 같은 EXE와 사용 안내·구성요소 라이선스를 묶었습니다.
-- 원본 게임과 BIOS는 포함하지 않습니다. 일본판 원본 CHD 또는 단일 BIN/CUE가 필요합니다.
+- **[PCE-Space-Adventure-Cobra-Kr-v1.0-r2-Patcher.exe](https://github.com/OldManCraveGuitars-bit/PCE-Space-Adventure-Cobra-Kr/releases/download/v1.0/PCE-Space-Adventure-Cobra-Kr-v1.0-r2-Patcher.exe)**: 별도 Python 설치 없이 실행하는 수정 패처입니다.
+- `PCE-Space-Adventure-Cobra-Kr-v1.0-r2.zip`: 같은 EXE와 사용 안내·구성요소 라이선스를 묶었습니다.
+- 원본 게임과 BIOS는 포함하지 않습니다. 일본판 원본 CHD 또는 BIN/CUE가 필요합니다. 여러 BIN으로 나뉜 원본은 모든 트랙과 함께 있는 CUE를 선택하세요.
+
+### 패처 r2 수정 (2026-10-25)
+
+기존 패처는 출력 경로에 한글이 있으면 CHD 생성 중 `Error parsing input file` / `Illegal byte sequence`로 실패했습니다. **r2에서 수정했습니다.** 한글 Windows 사용자 이름 아래의 다운로드·바탕 화면 등도 해당할 수 있습니다.
+
+- 한국어 ANSI(CP949)·일본어 ANSI(CP932)·UTF-8·UTF-16 CUE의 파일명 처리를 보완했습니다.
+- 여러 BIN 트랙을 사용하는 CUE를 지원합니다. 트랙을 합친 바이트가 지원 원본 SHA-256과 정확히 일치해야 적용됩니다.
+- 원본 검증과 덮어쓰기 방지는 유지합니다. 기존 v1.0 게임 데이터와 결과 BIN 해시는 같습니다. **이미 패치를 완료한 분은 다시 적용할 필요가 없습니다.**
+- `r2`가 없는 이전 EXE 대신 위 수정본을 사용하세요. 패처 소스: [patcher-v1.0-r2](https://github.com/OldManCraveGuitars-bit/PCE-Space-Adventure-Cobra-Kr/tree/patcher-v1.0-r2).
 
 ## 한글화 내용
 
@@ -34,12 +43,12 @@ PC Engine CD-ROM²용 SF 어드벤처입니다. 우주 해적 코브라가 되�
 
 ## 적용 방법
 
-1. EXE를 실행하고 **일본판 원본 CHD 또는 단일 BIN/CUE**를 선택합니다. 이전 한글판에 덧씌우지 않습니다.
+1. r2 EXE를 실행하고 **일본판 원본 CHD 또는 BIN/CUE**를 선택합니다. 여러 BIN은 CUE를 선택합니다. 이전 한글판에 덧씌우지 않습니다.
 2. 새 출력 폴더를 정한 뒤 **한국어 패치 만들기**를 누릅니다.
 3. `CHD도 생성하기`를 선택하면 BIN/CUE와 CHD를 함께 만듭니다. 기존 파일은 덮어쓰지 않습니다.
 4. 생성된 CHD 또는 CUE로 새로 부팅합니다. BIN과 CUE는 같은 폴더에 둡니다.
 
-**Super CD-ROM² System Card 3.0**과 약 **900MB 이상의 여유 공간**이 필요합니다. 여러 BIN으로 나뉜 CUE는 직접 지원하지 않습니다.
+**Super CD-ROM² System Card 3.0**과 약 **900MB 이상의 여유 공간**이 필요합니다. CUE와 모든 BIN은 압축을 푼 상태로 두세요. 출력에는 아직 존재하지 않는 새 폴더 이름을 지정합니다.
 
 이전 버전의 강제저장 상태 자동 로딩은 끄세요. 게임 내 저장은 이어서 사용할 수 있으며, 에뮬레이터에서 요구하는 저장 파일명을 새 게임 파일의 기본 이름과 맞춰야 합니다. 기존 저장 파일은 먼저 별도로 보관하세요.
 
